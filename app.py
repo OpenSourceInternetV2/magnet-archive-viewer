@@ -15,6 +15,7 @@ from search import Search
 
 DATABASE_FILE_NAME = 'content'
 
+# Check if the magnet database exists
 if not os.path.exists(DATABASE_FILE_NAME):
 	print 'ERROR: Database file "' + DATABASE_FILE_NAME + '" not found.'
 	exit()
@@ -23,15 +24,23 @@ if not os.path.exists(DATABASE_FILE_NAME):
 class SearchThread(Thread):
 	def __init__ (self, app, term):
 		Thread.__init__(self)
+		# The App instance
 		self.app = app
+
+		# The search term
 		self.term = term
 
 	def run(self):
 		search = Search(DATABASE_FILE_NAME)
+
+		# Search!
 		result_list = search.search(self.term)
+
+		# Create an HTML file and open it in the default browser
 		name = self.generate_html_file(result_list)
 		webbrowser.open('file://' + name)
 
+		# Re-enable the search button
 		self.app.button.config(text='Search', state=ACTIVE)
 
 	def generate_html_file(self, result_list):
@@ -154,6 +163,7 @@ class SearchThread(Thread):
 		</html>
 		"""
 
+		# Create temp HTML file
 		f = tempfile.NamedTemporaryFile(delete=False, suffix='.html')
 		f.write(html)
 		name = f.name
@@ -164,6 +174,7 @@ class SearchThread(Thread):
 
 class App:
 	def __init__(self,parent):
+		# Create frame, buttons, etc
 		self.f = Frame(parent)
 		self.f.pack(padx=15,pady=15)
     
@@ -179,26 +190,27 @@ class App:
 		self.button.pack(side=BOTTOM,padx=10,pady=10)
 
 	def key(self, event):
+		# If ENTER was pressed, search
 		if event.char == '\r':
 			self.search()
 
 	def search(self):
+		# If there's something to search, search!
 		if self.entry.get() != '':
 			self.button.config(text='Searching...', state=DISABLED)
 
 			th = SearchThread(self, self.entry.get())
-			th.start() 
-
-			#self.f.quit()
+			th.start()
 		else:
 			tkMessageBox.showinfo('Hey', 'You should type something in the search. That\'s the point, really...')
 
 
 
 root = Tk()
-root.title('TPB Viewer')
+root.title('Magnet Archive Viewer')
 app = App(root)
 
+# If on Mac OS, bring the window to top
 if sys.platform == 'darwin':
 	os.system('''/usr/bin/osascript -e 'tell app "Finder" to set frontmost of process "Python" to true' ''')
 

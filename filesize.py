@@ -1,4 +1,7 @@
 
+# This is a stripped version of the hurry.filesize module
+# http://pypi.python.org/pypi/hurry.filesize/
+
 alternative = [
     (1024 ** 5, ' PB'),
     (1024 ** 4, ' TB'), 
