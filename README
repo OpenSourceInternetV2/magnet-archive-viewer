@@ -11,18 +11,20 @@ To use it, follow these steps:
 
 1) Download the project (click the ZIP button above)
 
-2) Download the archive at
+2) Unzip the project somewhere
+
+3) Download the archive at
    http://thepiratebay.se/torrent/7016365/The_whole_Pirate_Bay_magnet_archive
 
-3) Unzip the archive to the same folder as this file. You should see a file
+4) Unzip the archive to the same folder as this file. You should see a file
    called "content". THE APP WON'T WORK WITHOUT THIS FILE.
 
-4) Make sure you have Python 2.7 installed. If you have a mac or linux it
+5) Make sure you have Python 2.7 installed. If you have a mac or linux it
    should already be there.
 
-5) Run app.py, or the MAV scripts (MAV.command for mac or MAV.cmd for windows).
+6) Run app.py, or the MAV scripts (MAV.command for mac or MAV.cmd for windows).
 
-6) After the app is opened, type something in the search and wait for the
+7) After the app is opened, type something in the search and wait for the
    results to appear in your favourite browser. =)
 
 Have fun!
