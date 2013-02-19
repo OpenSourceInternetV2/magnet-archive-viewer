@@ -7,14 +7,22 @@ http://thepiratebay.se/torrent/7016365/The_whole_Pirate_Bay_magnet_archive
 I haven't tested the code on other archive, but theoretically it can open any
 other one that uses the same format.
 
-To use it, just run app.py (yes, it's in Python), or the MAV scripts (.command
-for mac or .cmd for windows).
+To use it, follow these steps:
 
-After the app is opened, type something in the search and wait for the results
-to appear in your favourite browser. =)
+1) Download the project (click the ZIP button above)
 
-The app will only work if there's an archive file in the folder, called
-"content". You just need to get an archive (for example, the one mentioned
-above), and decompress it to this folder.
+2) Download the archive at
+   http://thepiratebay.se/torrent/7016365/The_whole_Pirate_Bay_magnet_archive
+
+3) Unzip the archive to the same folder as this file. You should see a file
+   called "content". THE APP WON'T WORK WITHOUT THIS FILE.
+
+4) Make sure you have Python 2.7 installed. If you have a mac or linux it
+   should already be there.
+
+5) Run app.py, or the MAV scripts (MAV.command for mac or MAV.cmd for windows).
+
+6) After the app is opened, type something in the search and wait for the
+   results to appear in your favourite browser. =)
 
 Have fun!
