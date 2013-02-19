@@ -1,1 +1,20 @@
-README
+I have created this app so i could have a cross-platform way of viewing
+a magnet link archive.
+
+This app can open the following magnet archive:
+http://thepiratebay.se/torrent/7016365/The_whole_Pirate_Bay_magnet_archive
+
+I haven't tested the code on other archive, but theoretically it can open any
+other one that uses the same format.
+
+To use it, just run app.py (yes, it's in Python), or the MAV scripts (.command
+for mac or .cmd for windows).
+
+After the app is opened, type something in the search and wait for the results
+to appear in your favourite browser. =)
+
+The app will only work if there's an archive file in the folder, called
+"content". You just need to get an archive (for example, the one mentioned
+above), and decompress it to this folder.
+
+Have fun!
